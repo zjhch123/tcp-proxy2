@@ -64,6 +64,7 @@ const startClient = ({
         }
         return
       } catch (e) {
+        console.log(data.toString())
       }
       client.end()
     });

@@ -28,7 +28,7 @@ const startProxyServer = ({
     });
   });
 
-  proxyServer.listen(remote_port, () => {
+  proxyServer.listen(remote_port, '0.0.0.0', () => {
     logger.info(`转发服务: ${serviceName} 启动成功, local: ${remote_port} <==> ${local_port} :remote`);
   });
 
@@ -105,7 +105,7 @@ const startServer = () => {
     }
   });
   
-  server.listen(9999, '127.0.0.1', () => {
+  server.listen(9999, '0.0.0.0', () => {
     logger.info('等待客户端连接');
   });
 }
