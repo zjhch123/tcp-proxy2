@@ -48,7 +48,7 @@ const startClient = ({
           const serverSocket = new net.Socket();
           const clientSocket = new net.Socket();
     
-          serverSocket.connect(config.remotePort, config.remotePort, () => {
+          serverSocket.connect(config.remotePort, config.remoteServer, () => {
             serverSocket.write(JSON.stringify({ message: 'connect', proxySocketId }));
             clientSocket.connect(local_port, local_host);
             clientSocket.pipe(serverSocket);
@@ -64,7 +64,6 @@ const startClient = ({
         }
         return
       } catch (e) {
-        console.log(data.toString())
       }
       client.end()
     });
